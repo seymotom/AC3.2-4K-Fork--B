@@ -69,6 +69,16 @@ class ViewController: UIViewController, TwicketSegmentedControlDelegate, UITable
        return self.sectionTitles[section]
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let title = UILabel()
+        title.font = UIFont(name: "Times New Roman", size: 16)!
+        title.textColor = UIColor.darkGray
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font=title.font
+        header.textLabel?.textColor=title.textColor
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionPredicate = NSPredicate(format: "section = %@", self.sectionTitles[section])
         return self.articles.filter { sectionPredicate.evaluate(with: $0)}.count
