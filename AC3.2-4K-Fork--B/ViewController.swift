@@ -17,7 +17,7 @@ class ViewController: UIViewController, TwicketSegmentedControlDelegate, UITable
     
     var articles: [Article] = []
     
-    var uri = ["home", "arts", "sports"]
+    var uri = ["home", "arts", "sports", "politics"]
     
     
     var sectionTitles: [String] {
